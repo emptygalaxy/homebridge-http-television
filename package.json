@@ -29,5 +29,13 @@
   },
   "dependencies": {
     "http-television": "0.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emptygalaxy/homebridge-http-television.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emptygalaxy/homebridge-http-television/issues"
+  },
+  "homepage": "https://github.com/emptygalaxy/homebridge-http-television#readme"
 }
