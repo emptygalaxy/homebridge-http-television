@@ -638,6 +638,13 @@
                         "type": "string",
                         "required": true
                       },
+                      "type": {
+                        "title": "Input type",
+                        "type": "string",
+                        "enum": ["other","homescreen","tuner","hdmi","composite video","s video","component video","dvi","airplay","usb","application"],
+                        "default": "other",
+                        "required": false
+                      },
                       "url": {
                         "title": "URL",
                         "type": "string",

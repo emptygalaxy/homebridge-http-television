@@ -60,17 +60,18 @@ export class InputSourceHandler {
         // setup
         inputs.forEach((input: HttpInputAction, index: number) => {
             const inputName = input.label;
-            const identifier = index;
-            this.log.info(identifier, inputName);
+            const identifier: number = index;
+            const subType: string = identifier.toString();
+            this.log.info(inputName, identifier);
 
-            const inputSource:Service = this.accessory.getService(identifier) ||
-                this.accessory.addService(Service.InputSource, inputName, identifier);
+            const inputSource:Service = this.accessory.getService(subType) ||
+                this.accessory.addService(Service.InputSource, inputName, subType);
 
-            // const inputType = this.mapInputType(input.source);
+            const inputType = this.mapInputType(input['type']);
 
             inputSource
                 .setCharacteristic(Characteristic.ConfiguredName, inputName)
-                // .setCharacteristic(Characteristic.InputSourceType, inputType)
+                .setCharacteristic(Characteristic.InputSourceType, inputType)
                 .setCharacteristic(Characteristic.IsConfigured, Characteristic.IsConfigured.CONFIGURED)
                 .setCharacteristic(Characteristic.CurrentVisibilityState, Characteristic.CurrentVisibilityState.SHOWN)
                 .setCharacteristic(Characteristic.Identifier, identifier)
@@ -90,6 +91,37 @@ export class InputSourceHandler {
         });
     }
 
+    private mapInputType(type: HttpInputType|string|undefined): CharacteristicValue
+    {
+        const Characteristic = this.api.hap.Characteristic;
+        switch(type)
+        {
+            default:
+            case 'other':
+                return Characteristic.InputSourceType.OTHER;
+            case 'homescreen':
+                return Characteristic.InputSourceType.HOME_SCREEN;
+            case 'tuner':
+                return Characteristic.InputSourceType.TUNER;
+            case 'hdmi':
+                return Characteristic.InputSourceType.HDMI;
+            case 'composite video':
+                return Characteristic.InputSourceType.COMPOSITE_VIDEO;
+            case 's video':
+                return Characteristic.InputSourceType.S_VIDEO;
+            case 'component video':
+                return Characteristic.InputSourceType.COMPONENT_VIDEO;
+            case 'dvi':
+                return Characteristic.InputSourceType.DVI;
+            case 'airplay':
+                return Characteristic.InputSourceType.AIRPLAY;
+            case 'usb':
+                return Characteristic.InputSourceType.USB;
+            case 'application':
+                return Characteristic.InputSourceType.APPLICATION;
+        }
+    }
+
     private getActiveIdentifier(callback: CharacteristicGetCallback): void {
         this.log.info('get active identifier', this.activeIdentifier);
         callback(null, this.activeIdentifier);
@@ -99,26 +131,18 @@ export class InputSourceHandler {
         try {
             this.log.info('set active identifier', value);
 
-            let activeIndex = 0;
-            let activeInput: HttpInputAction|null = null;
-            for(let i=0; i<this.inputs.length; i++) {
-                const input: HttpInputAction = this.inputs[i];
-                if(input.label === value) {
-                    activeIndex = i;
-                    activeInput = input;
-                }
-            }
+            let activeIndex: number = value as number;
 
-            if(activeInput !== null) {
-                console.log('set input', activeIndex);
-                this.television.setInput(activeIndex, (result: boolean) => {
-                    if(result) {
-                        callback(new Error());
-                    } else {
-                        callback();
-                    }
-                });
-            }
+            console.log('set input', activeIndex);
+            this.television.setInput(activeIndex, (result: boolean) => {
+                console.log('this.television.setInput', result);
+                if(result) {
+                    callback(new Error());
+                } else {
+                    this.activeIdentifier = activeIndex;
+                    callback();
+                }
+            });
         } catch (e) {
             this.log.error(e);
             callback(e);
@@ -133,3 +157,5 @@ export class InputSourceHandler {
         callback();
     }
 }
+
+export type HttpInputType = 'other'|'homescreen'|'tuner'|'hdmi'|'composite video'|'s video'|'component video'|'dvi'|'airplay'|'usb'|'application';

@@ -11,8 +11,6 @@ export class TelevisionHandler {
     private readonly tvService: Service;
     private readonly switchService?: Service;
 
-    private deviceActive = false;
-
     constructor(
         private readonly log: Logger,
         private readonly api: API,
@@ -132,8 +130,8 @@ export class TelevisionHandler {
                 return 'select';
             case Characteristic.RemoteKey.BACK:
                 return 'back';
-            // case Characteristic.RemoteKey.EXIT:
-            //     return 'exit';
+            case Characteristic.RemoteKey.EXIT:
+                return 'exit';
             case Characteristic.RemoteKey.PLAY_PAUSE:
                 return 'playPause';
             case Characteristic.RemoteKey.INFORMATION:

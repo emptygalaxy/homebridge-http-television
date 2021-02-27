@@ -1,7 +1,7 @@
 import {HttpTelevisionConfig} from "http-television/dist";
-import {PlatformConfig} from "homebridge/lib/server";
+// import {PlatformConfig} from "homebridge/lib/server";
 
-export interface HttpTelevisionPluginConfig extends PlatformConfig {
+export interface HttpTelevisionPluginConfig {
     // name: string;
     televisions: HttpTelevisionAccessoryConfig[];
 }

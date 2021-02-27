@@ -1,7 +1,7 @@
 import {APIEvent, DynamicPlatformPlugin, API} from 'homebridge/lib/api';
 import {PlatformAccessory} from 'homebridge/lib/platformAccessory';
 import {Logger} from 'homebridge/lib/logger';
-import {PlatformConfig} from 'homebridge/lib/server';
+// import {PlatformConfig} from 'homebridge/lib/server';
 import {PLATFORM_NAME, PLUGIN_NAME} from './settings';
 import {HttpTelevisionAccessoryConfig, HttpTelevisionPluginConfig} from "./HttpTelevisionPluginConfig";
 import {HttpTelevisionPlatformAccessory} from "./HttpTelevisionPlatformAccessory";
@@ -11,7 +11,7 @@ export class HttpTelevisionPlatform implements DynamicPlatformPlugin {
 
     constructor(
         public readonly log: Logger,
-        public readonly config: PlatformConfig,
+        public readonly config: any,
         public readonly api: API,
     ) {
         this.api.on(APIEvent.DID_FINISH_LAUNCHING, () => {
