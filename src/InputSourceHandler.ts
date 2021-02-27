@@ -12,7 +12,7 @@ export class InputSourceHandler {
     private inputs: HttpInputAction[] = [];
 
     private readonly inputServices: Service[] = [];
-    private activeIdentifier?: string;
+    private activeIdentifier?: number;
 
     constructor(
         private readonly log: Logger,
@@ -60,11 +60,11 @@ export class InputSourceHandler {
         // setup
         inputs.forEach((input: HttpInputAction, index: number) => {
             const inputName = input.label;
-            const identifier = inputName;
+            const identifier = index;
             this.log.info(identifier, inputName);
 
             const inputSource:Service = this.accessory.getService(identifier) ||
-                this.accessory.addService(Service.InputSource, identifier, inputName);
+                this.accessory.addService(Service.InputSource, inputName, identifier);
 
             // const inputType = this.mapInputType(input.source);
 
@@ -77,7 +77,7 @@ export class InputSourceHandler {
             ;
 
             inputSource.getCharacteristic(this.api.hap.Characteristic.ConfiguredName)
-                .on(this.api.hap.CharacteristicEventTypes.SET, this.setConfiguredInputSourceName.bind(this, identifier));
+                .on(this.api.hap.CharacteristicEventTypes.SET, this.setConfiguredInputSourceName.bind(this, inputName));
 
 
             if(index === 0) {

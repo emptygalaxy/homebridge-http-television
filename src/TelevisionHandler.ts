@@ -39,6 +39,7 @@ export class TelevisionHandler {
         tvService
             .setCharacteristic(Characteristic.ConfiguredName, this.name)
             .setCharacteristic(Characteristic.SleepDiscoveryMode, Characteristic.SleepDiscoveryMode.NOT_DISCOVERABLE)
+            .setCharacteristic(Characteristic.ActiveIdentifier, 0)
         ;
         tvService.getCharacteristic(Characteristic.Active)
             .on(CharacteristicEventTypes.GET, this.getTelevisionActive.bind(this))
