@@ -135,8 +135,7 @@ export class InputSourceHandler {
 
             console.log('set input', activeIndex);
             this.television.setInput(activeIndex, (result: boolean) => {
-                console.log('this.television.setInput', result);
-                if(result) {
+                if(!result) {
                     callback(new Error());
                 } else {
                     this.activeIdentifier = activeIndex;
