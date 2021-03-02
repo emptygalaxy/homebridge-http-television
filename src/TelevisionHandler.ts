@@ -125,7 +125,7 @@ export class TelevisionHandler {
             case Characteristic.RemoteKey.ARROW_LEFT:
                 return 'left';
             case Characteristic.RemoteKey.ARROW_RIGHT:
-                return 'down';
+                return 'right';
             case Characteristic.RemoteKey.SELECT:
                 return 'select';
             case Characteristic.RemoteKey.BACK:
