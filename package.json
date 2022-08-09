@@ -28,7 +28,7 @@
     "typescript": "^4.2.2"
   },
   "dependencies": {
-    "http-television": "0.0.4"
+    "http-television": "0.0.5"
   },
   "repository": {
     "type": "git",
