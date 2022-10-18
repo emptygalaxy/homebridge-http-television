@@ -1,21 +1,20 @@
-import {HttpTelevisionConfig} from "http-television/dist";
-// import {PlatformConfig} from "homebridge/lib/server";
+import {HttpTelevisionConfig} from 'http-television';
+import type {PlatformConfig} from 'homebridge';
 
-export interface HttpTelevisionPluginConfig {
-    // name: string;
-    televisions: HttpTelevisionAccessoryConfig[];
+export interface HttpTelevisionPluginConfig extends PlatformConfig {
+  televisions?: HttpTelevisionAccessoryConfig[];
 }
 
 export interface HttpTelevisionAccessoryConfig extends HttpTelevisionConfig {
-    id?: string;
-    name: string;
+  id?: string;
+  name: string;
 
-    manufacturer?: string;
-    model?: string;
-    serialNumber?: string;
-    version?: string;
+  manufacturer?: string;
+  model?: string;
+  serialNumber?: string;
+  version?: string;
 
-    enableSwitch?: boolean;
-    enableSpeaker?: boolean;
-    category?: 'television'|'top set box';
+  enableSwitch?: boolean;
+  enableSpeaker?: boolean;
+  category?: 'television' | 'top set box';
 }

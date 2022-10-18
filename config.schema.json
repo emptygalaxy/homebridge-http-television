@@ -95,6 +95,12 @@
                   "title": "Body",
                   "type": "string",
                   "required": false
+                },
+                "timeout": {
+                  "title": "Timeout (ms)",
+                  "type": "integer",
+                  "default": 1000,
+                  "required": false
                 }
               }
             },
@@ -130,6 +136,12 @@
                       "title": "Body",
                       "type": "string",
                       "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
+                      "required": false
                     }
                   }
                 },
@@ -158,6 +170,12 @@
                     "body": {
                       "title": "Body",
                       "type": "string",
+                      "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
                       "required": false
                     }
                   }
@@ -188,6 +206,12 @@
                       "title": "Body",
                       "type": "string",
                       "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
+                      "required": false
                     }
                   }
                 },
@@ -216,6 +240,12 @@
                     "body": {
                       "title": "Body",
                       "type": "string",
+                      "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
                       "required": false
                     }
                   }
@@ -246,6 +276,12 @@
                       "title": "Body",
                       "type": "string",
                       "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
+                      "required": false
                     }
                   }
                 },
@@ -274,6 +310,12 @@
                     "body": {
                       "title": "Body",
                       "type": "string",
+                      "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
                       "required": false
                     }
                   }
@@ -304,6 +346,12 @@
                       "title": "Body",
                       "type": "string",
                       "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
+                      "required": false
                     }
                   }
                 },
@@ -332,6 +380,12 @@
                     "body": {
                       "title": "Body",
                       "type": "string",
+                      "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
                       "required": false
                     }
                   }
@@ -362,6 +416,12 @@
                       "title": "Body",
                       "type": "string",
                       "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
+                      "required": false
                     }
                   }
                 },
@@ -390,6 +450,12 @@
                     "body": {
                       "title": "Body",
                       "type": "string",
+                      "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
                       "required": false
                     }
                   }
@@ -420,6 +486,12 @@
                       "title": "Body",
                       "type": "string",
                       "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
+                      "required": false
                     }
                   }
                 },
@@ -448,6 +520,12 @@
                     "body": {
                       "title": "Body",
                       "type": "string",
+                      "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
                       "required": false
                     }
                   }
@@ -478,6 +556,12 @@
                       "title": "Body",
                       "type": "string",
                       "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
+                      "required": false
                     }
                   }
                 },
@@ -506,6 +590,12 @@
                     "body": {
                       "title": "Body",
                       "type": "string",
+                      "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
                       "required": false
                     }
                   }
@@ -536,6 +626,12 @@
                       "title": "Body",
                       "type": "string",
                       "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
+                      "required": false
                     }
                   }
                 },
@@ -564,6 +660,12 @@
                     "body": {
                       "title": "Body",
                       "type": "string",
+                      "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
                       "required": false
                     }
                   }
@@ -594,6 +696,12 @@
                       "title": "Body",
                       "type": "string",
                       "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
+                      "required": false
                     }
                   }
                 },
@@ -622,6 +730,12 @@
                     "body": {
                       "title": "Body",
                       "type": "string",
+                      "required": false
+                    },
+                    "timeout": {
+                      "title": "Timeout (ms)",
+                      "type": "integer",
+                      "default": 1000,
                       "required": false
                     }
                   }
@@ -664,6 +778,12 @@
                       "body": {
                         "title": "Body",
                         "type": "string",
+                        "required": false
+                      },
+                      "timeout": {
+                        "title": "Timeout (ms)",
+                        "type": "integer",
+                        "default": 1000,
                         "required": false
                       }
                     }
