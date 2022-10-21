@@ -28,7 +28,8 @@
         "object": "it",
         "property": "only"
       }
-    ]
+    ],
+    "node/no-unpublished-import": "off"
   },
   "overrides": [
     {
